@@ -7,7 +7,7 @@ from fastapi.responses import HTMLResponse
 app = FastAPI()
 
 # MongoDB setup
-client = AsyncIOMotorClient('mongodb://localhost:27017')
+client = AsyncIOMotorClient('mongodb://49.207.240.252:27017')
 db = client['neuro']
 collection = db['labs']
 
@@ -27,7 +27,7 @@ async def add_user(user: User):
     await collection.insert_one(user.dict())
     return {"message": "User added successfully"}
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/app", response_class=HTMLResponse)
 async def read_html():
    
     html_content = """
