@@ -7,7 +7,7 @@ from fastapi.responses import HTMLResponse
 app = FastAPI()
 
 # MongoDB setup
-client = AsyncIOMotorClient('mongodb://49.207.240.252:27017')
+client = AsyncIOMotorClient('mongodb://49.207.240.252:27017/neuro')
 db = client['neuro']
 collection = db['labs']
 
